@@ -1,0 +1,56 @@
+---
+
+name: create_list
+description: Create a list of specified type in ThaleMine for the current user.
+version: 0.1
+tags:
+    - arabidopsis
+    - thalemine
+    - list
+
+authors:
+    - email: erik@jcvi.org
+      name: Erik Ferlanti
+      sponsor_organization: JCVI
+      sponsor_uri: http://www.jcvi.org
+
+type: query
+main_module: services.create_list.main.py
+url: https://apps.araport.org/thalemine/service
+validate_request: true
+timeout: 120
+icon: araport.png
+whitelist:
+    - apps.araport.org
+requirements:
+    - requests
+
+endpoints:
+    /list:
+        description: Returns all of the lists for which the current user has access.
+    /search:
+        description: Creates a list of the specified type in ThaleMine for the current user.
+        parameters:
+            - name: name
+              description: Name of list
+              required: true
+              type: string
+            - name: type
+              description: Type of list
+              default: "Gene"
+              required: true
+              type: string
+            - name: data
+              description: A space separated strings of items for the list
+              required: true
+              type: string
+
+sources:
+    - title: ThaleMine
+      description: Intermine-based information warehouse containing essential Arabidopsis Col-0 data sets
+      language: en-us
+      sponsor_organization_name: J. Craig Venter Institute
+      sponsor_uri: http://www.jcvi.org/
+      provider_name: Christopher D. Town
+      provider_email: cdtown@jcvi.org
+      uri: https://apps.araport.org/thalemine/
