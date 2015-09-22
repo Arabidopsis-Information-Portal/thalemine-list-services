@@ -1,8 +1,8 @@
 ---
 
-name: create_list
+name: create_thalemine_list
 description: Create a list of specified type in ThaleMine for the current user.
-version: 0.1
+version: 0.2
 tags:
     - arabidopsis
     - thalemine
@@ -15,7 +15,7 @@ authors:
       sponsor_uri: http://www.jcvi.org
 
 type: query
-main_module: services.create_list.main.py
+main_module: services.create_thalemine_list.main.py
 url: https://api.araport.org/mine/0.5.0/service
 validate_request: true
 timeout: 120
