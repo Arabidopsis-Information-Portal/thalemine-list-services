@@ -2,9 +2,9 @@
 
 These are [Araport](http://www.araport.org) API wrappers around various [Thalemine Endpoints](https://www.araport.org/api-explorer/thalemine).
 
-# create_list: Create a list of specified type in ThaleMine for the current user
+# create_thalemine_list: Create a list of specified type in ThaleMine for the current user
 ```
->>> import services.create_list.main as main
+>>> import services.create_thalemine_list.main as main
 >>> main.search({'name':'esf-test-list', 'type':'Gene', 'data':'AT1G01040 AT1G01050 AT1G01060'})
 {
   "listName": "esf-test-list",
@@ -24,7 +24,7 @@ These are [Araport](http://www.araport.org) API wrappers around various [Thalemi
 ```
 The list function returns all of the lists for which the current user has access.
 ```
->>> import services.create_list.main as main
+>>> import services.create_thalemine_list.main as main
 >>> main.list({})
     {
       "status": "CURRENT",
