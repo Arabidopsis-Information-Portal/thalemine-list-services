@@ -2,7 +2,7 @@
 
 name: get_thalemine_user
 description: Get information about the current ThaleMine user
-version: 0.1
+version: 1.0
 tags:
     - arabidopsis
     - thalemine
@@ -13,22 +13,11 @@ authors:
       sponsor_organization: JCVI
       sponsor_uri: http://www.jcvi.org
 
-type: query
-main_module: services.get_thalemine_user.main.py
-url: https://api.araport.org/mine/0.5.0/service
-validate_request: true
-timeout: 120
+type: passthrough
+url: https://api.araport.org/mine/0.5.0/service/user
 icon: araport.png
 whitelist:
     - api.araport.org
-requirements:
-    - requests
-
-endpoints:
-    /list:
-        description: Return information about the current ThaleMine user
-    /search:
-        description: Return information about the current ThaleMine user
 
 sources:
     - title: ThaleMine
