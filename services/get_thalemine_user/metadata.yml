@@ -14,10 +14,10 @@ authors:
       sponsor_uri: http://www.jcvi.org
 
 type: passthrough
-url: https://api.araport.org/mine/0.5.0/service/user
+url: https://apps.araport.org/thalemine/service/user
 icon: araport.png
 whitelist:
-    - api.araport.org
+    - apps.araport.org
 
 sources:
     - title: ThaleMine
