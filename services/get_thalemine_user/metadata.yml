@@ -18,6 +18,8 @@ url: https://apps.araport.org/thalemine/service/user
 icon: araport.png
 whitelist:
     - apps.araport.org
+        forward:
+            - X-Jwt-Assertion-Araport-Org
 
 sources:
     - title: ThaleMine
