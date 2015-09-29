@@ -1,8 +1,8 @@
 ---
 
 name: create_thalemine_list
-description: Create a list of specified type in ThaleMine for the current user.
-version: 0.2
+description: Create a list of specified type in ThaleMine for the current user
+version: 1.0
 tags:
     - arabidopsis
     - thalemine
@@ -14,36 +14,13 @@ authors:
       sponsor_organization: JCVI
       sponsor_uri: http://www.jcvi.org
 
-type: query
-main_module: services.create_thalemine_list.main.py
-url: https://api.araport.org/mine/0.5.0/service
-validate_request: true
-timeout: 120
+type: passthrough
+url: https://apps.araport.org/thalemine/service/lists
 icon: araport.png
 whitelist:
-    - api.araport.org
-requirements:
-    - requests
-
-endpoints:
-    /list:
-        description: Returns all of the lists for which the current user has access.
-    /search:
-        description: Creates a list of the specified type in ThaleMine for the current user.
-        parameters:
-            - name: name
-              description: Name of list
-              required: true
-              type: string
-            - name: type
-              description: Type of list
-              default: "Gene"
-              required: true
-              type: string
-            - name: data
-              description: A space separated strings of items for the list
-              required: true
-              type: string
+    - apps.araport.org:
+        forward:
+            - X-Jwt-Assertion-Araport-Org
 
 sources:
     - title: ThaleMine
