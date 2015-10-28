@@ -4,7 +4,12 @@ These are [Araport](http://www.araport.org) API wrappers around various [Thalemi
 
 # create_thalemine_list: Create a list of specified type in ThaleMine for the current user
 ```
-$ http POST "https://api.araport.org/community/v0.3/aip/create_thalemine_list_v1.0/access" Authorization:"Bearer: $TOKEN" "AT1G01040 AT1G01050 AT1G01060"
+$ cat list_of_identifiers
+AT1G01040
+AT1G01050
+AT1G01060
+
+$ http POST "https://api.araport.org/community/v0.3/aip/create_thalemine_list_v1.1/access?name=eriksf-test-list&type=Gene" Authorization:"Bearer: $TOKEN" Content-Type:"text/plain" < list_of_identifiers
 {
   "listName": "eriksf-test-list",
   "listSize": 3,
@@ -23,13 +28,16 @@ $ http POST "https://api.araport.org/community/v0.3/aip/create_thalemine_list_v1
 
 # add_to_thalemine_list: Add identifiers to a ThaleMine list for the current user
 ```
-$ http POST "https://api.araport.org/community/v0.3/aip/add_to_thalemine_list_v1.0/access" Authorization:"Bearer: $TOKEN" "FT"
+$ cat list_of_identifiers
+AT1G65480
+
+$ http POST "https://api.araport.org/community/v0.3/aip/add_to_thalemine_list_v1.1/access?name=eriksf-test-list" Authorization:"Bearer: $TOKEN" Content-Type:"text/plain" < list_of_identifiers
 {
   "listName": "eriksf-test-list",
   "listSize": 4,
   "type": null,
   "unmatchedIdentifiers": [
-    "FT"
+    "AT1G65480"
   ],
   "executionTime": "2015.09.29 16:30::42",
   "wasSuccessful": true,
@@ -40,7 +48,7 @@ $ http POST "https://api.araport.org/community/v0.3/aip/add_to_thalemine_list_v1
 
 # find_in_thalemine_list: Find object of specified type in the available lists of the current user
 ```
-$ http "https://api.araport.org/community/v0.3/aip/find_in_thalemine_v1.0/access?publicId=AT1G01060&type=Gene" Authorization:"Bearer: $TOKEN"
+$ http "https://api.araport.org/community/v0.3/aip/find_in_thalemine_v1.1/access?publicId=AT1G01060&type=Gene" Authorization:"Bearer: $TOKEN"
 {
   "lists": [
     {
@@ -77,7 +85,7 @@ $ http "https://api.araport.org/community/v0.3/aip/find_in_thalemine_v1.0/access
 
 # get_thalemine_lists: Show all ThaleMine lists the current user can access
 ```
-$ http "https://api.araport.org/community/v0.3/aip/get_thalemine_lists_v1.0/access" Authorization:"Bearer: $TOKEN"
+$ http "https://api.araport.org/community/v0.3/aip/get_thalemine_lists_v1.1/access" Authorization:"Bearer: $TOKEN"
 {
   "lists": [
     {
@@ -270,7 +278,7 @@ $ http "https://api.araport.org/community/v0.3/aip/get_thalemine_lists_v1.0/acce
 
 # get_thalemine_user: Get information about the current ThaleMine user
 ```
-$ http "https://api.araport.org/community/v0.3/aip/get_thalemine_user_v1.0/access" Authorization:"Bearer: $TOKEN"
+$ http "https://api.araport.org/community/v0.3/aip/get_thalemine_user_v1.1/access" Authorization:"Bearer: $TOKEN"
 {
   "user": {
     "username": "ARAPORT:eriksf",
