@@ -22,6 +22,7 @@ whitelist:
         forward:
             - X-Jwt-Assertion-Araport-Org
             - Authorization
+            - Content-Type
 
 sources:
     - title: ThaleMine
