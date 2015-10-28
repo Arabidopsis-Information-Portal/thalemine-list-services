@@ -2,7 +2,7 @@
 
 name: get_thalemine_lists
 description: Show all ThaleMine lists the current user can access
-version: 1.0
+version: 1.1
 tags:
     - arabidopsis
     - thalemine

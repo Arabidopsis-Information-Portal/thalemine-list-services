@@ -1,6 +1,6 @@
-# ThaleMine Webservices
+# ThaleMine List Webservices
 
-These are [Araport](http://www.araport.org) API wrappers around various [Thalemine Endpoints](https://www.araport.org/api-explorer/thalemine).
+These are [Araport](http://www.araport.org) API wrappers around various [Thalemine List Endpoints](https://www.araport.org/api-explorer/thalemine).
 
 # create_thalemine_list: Create a list of specified type in ThaleMine for the current user
 ```
