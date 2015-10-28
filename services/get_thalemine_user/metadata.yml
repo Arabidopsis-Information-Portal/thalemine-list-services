@@ -20,6 +20,7 @@ whitelist:
     - apps.araport.org:
         forward:
             - X-Jwt-Assertion-Araport-Org
+            - Authorization
 
 sources:
     - title: ThaleMine
