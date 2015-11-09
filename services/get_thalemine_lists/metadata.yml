@@ -2,7 +2,7 @@
 
 name: get_thalemine_lists
 description: Show all ThaleMine lists the current user can access
-version: 1.1
+version: 1.2
 tags:
     - arabidopsis
     - thalemine
@@ -22,6 +22,18 @@ whitelist:
         forward:
             - X-Jwt-Assertion-Araport-Org
             - Authorization
+
+endpoints:
+    /access/get:
+        get:
+            summary: Find lists on the server.
+            description: Find lists in ThaleMine for the using running the query.
+            parameters:
+                - name: name
+                  in: query
+                  description: An optional filter by name.
+                  type: string
+                  required: false
 
 sources:
     - title: ThaleMine
