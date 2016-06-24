@@ -23,6 +23,25 @@ whitelist:
             - X-Jwt-Assertion-Araport-Org
             - Authorization
 
+endpoints:
+    /access:
+        get:
+            summary: Find object in lists on the server.
+            description: Find object in lists in ThaleMine for the using running the query.
+            parameters:
+                - name: publicId
+                  in: query
+                  description: A stable identifier that can be used to find the object.
+                  type: string
+                  required: true
+                  default: abi3
+                - name: type
+                  in: query
+                  description: The type of object (required if using a public id).
+                  type: string
+                  required: true
+                  default: Gene
+
 sources:
     - title: ThaleMine
       description: Intermine-based information warehouse containing essential Arabidopsis Col-0 data sets
