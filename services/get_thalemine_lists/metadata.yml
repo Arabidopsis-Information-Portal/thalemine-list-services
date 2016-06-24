@@ -24,7 +24,7 @@ whitelist:
             - Authorization
 
 endpoints:
-    /access/get:
+    /access:
         get:
             summary: Find lists on the server.
             description: Find lists in ThaleMine for the using running the query.
